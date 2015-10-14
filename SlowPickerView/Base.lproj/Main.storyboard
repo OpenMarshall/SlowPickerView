@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlowPickerView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3NG-Y8-mlL">
+                                <rect key="frame" x="16" y="20" width="250" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIp-Uw-fQs">
+                                <rect key="frame" x="274" y="20" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="C89-dK-lZC"/>
+                                </constraints>
+                                <state key="normal" title="Roll"/>
+                                <connections>
+                                    <action selector="roll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbe-4F-chk"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PA7-eW-TpY">
+                                <rect key="frame" x="16" y="532" width="288" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Slow Version"/>
+                                    <segment title="Normal"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="UTg-LM-hiM"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PA7-eW-TpY" secondAttribute="bottom" constant="8" id="1X2-A8-ChW"/>
+                            <constraint firstItem="3NG-Y8-mlL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4Ay-AK-aNO"/>
+                            <constraint firstItem="oIp-Uw-fQs" firstAttribute="leading" secondItem="3NG-Y8-mlL" secondAttribute="trailing" constant="8" id="4Gb-qv-mkU"/>
+                            <constraint firstItem="PA7-eW-TpY" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="8Pf-zb-0zF"/>
+                            <constraint firstItem="PA7-eW-TpY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="S4H-Zq-8r0"/>
+                            <constraint firstItem="oIp-Uw-fQs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UUT-yI-oh4"/>
+                            <constraint firstItem="PA7-eW-TpY" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="V1t-yS-TGT"/>
+                            <constraint firstItem="oIp-Uw-fQs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ysb-5i-6Zc"/>
+                            <constraint firstItem="3NG-Y8-mlL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aNv-K8-AZk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3NG-Y8-mlL" secondAttribute="trailing" id="c3T-F7-xb0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PA7-eW-TpY" secondAttribute="bottom" id="f9q-Ql-vCh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PA7-eW-TpY" secondAttribute="trailing" id="wPh-5u-TXR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="c3T-F7-xb0"/>
+                                <exclude reference="8Pf-zb-0zF"/>
+                                <exclude reference="V1t-yS-TGT"/>
+                                <exclude reference="f9q-Ql-vCh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="rows" destination="3NG-Y8-mlL" id="dwR-kr-PNu"/>
+                        <outlet property="seg" destination="PA7-eW-TpY" id="grk-7g-N9m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="227" y="321"/>
+        </scene>
+    </scenes>
+</document>
